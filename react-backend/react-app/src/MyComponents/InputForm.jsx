@@ -54,10 +54,10 @@ class InputForm extends React.Component{
               });
         });
         
-
-
-        /*****************************************************************/
-        // TODO: hacer un servicio en el server Side que reciba el objeto y lo cree
+        /**TODO: Permitir que el botón para resetear los fields y que se reseten los fields despues de crear el xml */
+        /**TODO: Modificar el diseño del css para que sea mas amigable */
+        /**TODO: Separar el boton de crear xml del servicio que busca en la API y crear uno nuevo que haga la busqueda */
+        
      
     }
     render(){
