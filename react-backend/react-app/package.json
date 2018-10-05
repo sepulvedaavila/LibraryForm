@@ -9,6 +9,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5",
+    "sweetalert": "^2.1.0",
     "xmlbuilder": "^10.0.0"
   },
   "scripts": {

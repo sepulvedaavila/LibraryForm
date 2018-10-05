@@ -22,10 +22,10 @@ router.get('/getMovie', function (req, res) {
       return results.json();
     }).then(data => {   
 
-      console.log(data);
-            if(data.Error){              
+      console.log(data.Response);
+            if(data.Response === 'False'){              
                 console.log("No existe la pelicula en la OMDB");
-                res.send("No existe la pelicula en la OMDB");
+                res.sendStatus(300);
             }else{
                 var xml = xmlbuilder.create({
                     root: {
@@ -51,6 +51,7 @@ router.get('/getMovie', function (req, res) {
               }
     }).catch( (err) => {
         console.log(err);
+        res.send("Error: no se ha podido conectar con la API");
     });
   });
 
