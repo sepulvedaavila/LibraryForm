@@ -19,7 +19,7 @@ class InputForm extends React.Component{
 
     sendData(){
         let inputValues1 = this.state.inputValues
-        let titulo_pelicula ="";
+        let titulo_pelicula = "";
         for(const obj in inputValues1){
             console.log(obj+" -> "+inputValues1[obj])
             if(obj === 'titulo'){              
@@ -28,14 +28,14 @@ class InputForm extends React.Component{
             }
         }
 
-        fetch(`http://www.omdbapi.com/?t=${titulo_pelicula}&apikey=82a4df75`)
+        fetch('http://localhost:3001/getMovie?title='+titulo_pelicula)
         .then( results => {
             return results.json();
         }).then(data => {
             console.log(data)
             if(data.Error){
-                console.log("No existe la pelicula en la OMDB");
-                //TODO: crear respuesta en la vista donde exprese que la pélicula no esta dentro de la OMDB
+                //TODO: Cambiar alert por SWAL y pedir que ingrese manualmente
+                alert("No existe la pelicula en la OMDB");
             }else{
                 var xml = xmlbuilder.create({
                     root: {
@@ -46,7 +46,7 @@ class InputForm extends React.Component{
                             }
                         }
                     }
-                });
+                })
                 console.log(xml);
                 
             }
