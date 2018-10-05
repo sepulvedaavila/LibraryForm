@@ -23,9 +23,9 @@ router.get('/getMovie', function (req, res) {
     }).then(data => {   
 
       console.log(data);
-            if(data.Error){
-              
+            if(data.Error){              
                 console.log("No existe la pelicula en la OMDB");
+                res.send("No existe la pelicula en la OMDB");
             }else{
                 var xml = xmlbuilder.create({
                     root: {

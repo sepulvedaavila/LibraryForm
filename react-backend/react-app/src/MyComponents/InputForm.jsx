@@ -32,15 +32,11 @@ class InputForm extends React.Component{
         .then( results => {
             return results.json();
         }).then(data => {
-            console.log(data)
-            if(data.Error){
-                //TODO: Cambiar alert por SWAL y pedir que ingrese manualmente
-                alert("No existe la pelicula en la OMDB");
-            }else{
-                console.log("Busqueda exitosa en OMDB");
-            }
+            console.log(data)                        
+            console.log("Busqueda exitosa en OMDB");            
         }).catch(err => {
             console.log(err)    
+            alert("No existe la pelicula en la OMDB");
         });
         
 
