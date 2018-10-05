@@ -21,10 +21,10 @@ router.get('/getMovie', function (req, res) {
     .then(results => {
       return results.json();
     }).then(data => {   
-      // Aqui crear XML y guardarlo en Server
+
       console.log(data);
             if(data.Error){
-                //TODO: Cambiar alert por SWAL y pedir que ingrese manualmente
+              
                 console.log("No existe la pelicula en la OMDB");
             }else{
                 var xml = xmlbuilder.create({
@@ -38,10 +38,11 @@ router.get('/getMovie', function (req, res) {
                     }
                 });
                 console.log(xml);
-
+                // el modulo fs con el metodo writeFile solo acepta como segundo paramentro un Buffer y un string
+                // así que hay que convertir el xml a un string para que sea procesado.
                 xml = xml.toString({pretty:true});
                 
-                fs.writeFile('public/newdoc.xml', xml, function(err){
+                fs.writeFile('public/xml/newdoc.xml', xml, function(err){
                   if(err) console.log(err);
                   console.log("archivo guardado");
                   res.send(data);
