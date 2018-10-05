@@ -42,13 +42,15 @@ router.get('/getMovie', function (req, res) {
                 // así que hay que convertir el xml a un string para que sea procesado.
                 xml = xml.toString({pretty:true});
                 
-                fs.writeFile('public/xml/newdoc.xml', xml, function(err){
+                fs.writeFile('public/xml/'+data.Title+'.xml', xml, function(err){
                   if(err) console.log(err);
                   console.log("archivo guardado");
                   res.send(data);
                 });
               
               }
+    }).catch( (err) => {
+        console.log(err);
     });
   });
 

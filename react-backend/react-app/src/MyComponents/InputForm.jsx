@@ -2,6 +2,7 @@ import React from 'react'
 import InputField from './InputField'
 
 
+
 class InputForm extends React.Component{
     constructor(props){
         super(props)
@@ -38,6 +39,8 @@ class InputForm extends React.Component{
             }else{
                 console.log("Busqueda exitosa en OMDB");
             }
+        }).catch(err => {
+            console.log(err)    
         });
         
 
