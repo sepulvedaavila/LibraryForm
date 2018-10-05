@@ -1,6 +1,5 @@
 import React from 'react'
 import InputField from './InputField'
-import xmlbuilder from 'xmlbuilder';
 
 
 class InputForm extends React.Component{
@@ -37,18 +36,7 @@ class InputForm extends React.Component{
                 //TODO: Cambiar alert por SWAL y pedir que ingrese manualmente
                 alert("No existe la pelicula en la OMDB");
             }else{
-                var xml = xmlbuilder.create({
-                    root: {
-                        peliculas: {
-                            titulo: {
-                                '@type': 'Titulo', 
-                                '#text': data.Title 
-                            }
-                        }
-                    }
-                })
-                console.log(xml);
-                
+                console.log("Busqueda exitosa en OMDB");
             }
         });
         
