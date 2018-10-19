@@ -40,10 +40,6 @@ class InputForm extends React.Component{
             }
         });
         
-
-
-        /*****************************************************************/
-        // TODO: hacer un servicio en el server Side que reciba el objeto y lo cree
      
     }
     render(){
