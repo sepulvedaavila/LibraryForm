@@ -1,8 +1,6 @@
 import React from 'react'
 import InputField from './InputField'
-import swal from 'sweetalert' 
-
-
+import xmlbuilder from 'xmlbuilder';
 
 
 class InputForm extends React.Component{
@@ -33,31 +31,31 @@ class InputForm extends React.Component{
         fetch('http://localhost:3001/getMovie?title='+titulo_pelicula)
         .then( results => {
             return results.json();
-        }).then(data => {                   
-            
-                console.log("Busqueda exitosa en OMDB");
-                console.log(data);
-                swal({
-                    title: "Archivo Generado",
-                    text: "tu archivo ha sido guardado y esta en espera de ser cargado al sistema",
-                    icon: "success",
-                    button: "aceptar",
-                  });
-            
-        }).catch( (err) => {    
-            console.log(err);            
-            swal({
-                title: "Error",
-                text: "Ha ocurrido un error con tu busqueda",
-                icon: "error",
-                button: "aceptar",
-              });
+        }).then(data => {
+            console.log(data)
+            if(data.Error){
+                //TODO: Cambiar alert por SWAL y pedir que ingrese manualmente
+                alert("No existe la pelicula en la OMDB");
+            }else{
+                var xml = xmlbuilder.create({
+                    root: {
+                        peliculas: {
+                            titulo: {
+                                '@type': 'Titulo', 
+                                '#text': data.Title 
+                            }
+                        }
+                    }
+                })
+                console.log(xml);
+                
+            }
         });
         
-        /**TODO: Permitir que el botón para resetear los fields y que se reseten los fields despues de crear el xml */
-        /**TODO: Modificar el diseño del css para que sea mas amigable */
-        /**TODO: Separar el boton de crear xml del servicio que busca en la API y crear uno nuevo que haga la busqueda */
-        
+
+
+        /*****************************************************************/
+        // TODO: hacer un servicio en el server Side que reciba el objeto y lo cree
      
     }
     render(){
