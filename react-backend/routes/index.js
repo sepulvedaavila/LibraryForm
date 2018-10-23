@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 var express = require('express');
 var cors = require('cors');
 var xmlbuilder = require('xmlbuilder');
+//TODO: Check the way of building the tags with index `
 var fs = require('fs');
 var router = express.Router();
 

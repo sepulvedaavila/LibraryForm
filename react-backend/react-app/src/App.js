@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InputForm from './MyComponents/InputForm';
 
+// TODO: Create a new set of Fields according to the registration document.  please check new pushes with the document
 
 class App extends Component {
   render() {

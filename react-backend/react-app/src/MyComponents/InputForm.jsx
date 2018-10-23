@@ -29,7 +29,8 @@ class InputForm extends React.Component{
                 console.log(inputValues1[obj].split(' ').join('+'))
             }
         }
-
+        //TODO: Create the separation between the search and the actual XML saving 
+        //TODO: implement the logic of use MARC21 tags & index
         fetch('http://localhost:3001/getMovie?title='+titulo_pelicula)
         .then( results => {
             return results.json();
