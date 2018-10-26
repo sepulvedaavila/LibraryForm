@@ -1,9 +1,12 @@
 import React from 'react'
+import InputFieldNote from './InputFieldNote'
 
 class InputField extends React.Component{
     constructor(props){
         super(props)
+        this.state = {add_Field:''}
         this.handleChange = this.handleChange.bind(this)
+        this.addField = this.addField.bind(this)
     }
 
     handleChange(e){
@@ -12,7 +15,25 @@ class InputField extends React.Component{
         this.props.onChange(name, value)
     }
 
+    addField(){
+        console.log("adding field")
+        let name = this.props.name
+        let curr_add = this.state.add_Field
+        let new_add = <div>{curr_add}
+                                <InputFieldNote
+                                    name={name + "_extra"}
+                                    fieldPlaceholder={"Nota extra de " + name}
+                                />
+                            </div>
+        this.setState({
+            add_Field: new_add})
+    }
+
     render(){
+        let aux = '';
+        if (this.props.name === 'nota_general1' || this.props.name === 'nota_premios1'){
+            aux = <input type="button" value="Agregar campo adicional" onClick={this.addField}/>
+        }
         let component = <div>
                             <label>{this.props.fieldName}</label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -20,6 +41,8 @@ class InputField extends React.Component{
                             <input name={this.props.name} type='text' 
                             placeholder={this.props.fieldPlaceholder}
                             onChange={this.handleChange}/>
+                            {aux}
+                            {this.state.add_Field}
                         </div>;
         return component
     }
