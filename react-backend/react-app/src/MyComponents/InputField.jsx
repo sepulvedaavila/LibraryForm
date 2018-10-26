@@ -22,7 +22,7 @@ class InputField extends React.Component{
         let new_add = <div>{curr_add}
                                 <InputFieldNote
                                     name={name + "_extra"}
-                                    fieldPlaceholder={"Nota extra de " + name}
+                                    fieldPlaceholder={"Campo extra de " + name}
                                 />
                             </div>
         this.setState({
