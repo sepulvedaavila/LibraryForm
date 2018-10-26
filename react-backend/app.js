@@ -4,6 +4,7 @@ var cors = require('cors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var colors = require('colors');
 
 var indexRouter = require('./routes/index');
 var movieRouter = require('./routes/getMovie');
@@ -12,6 +13,17 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 app.use(cors());
+
+//Connection to the Database 
+
+// var urlDB = (process.env.NODE_ENV == 'production') ? "mongodb://127.0.0.1:27017/dgbu" : "mongodb://127.0.0.1:27017/dgbu-local";
+// console.log(colors.cyan((process.env.NODE_ENV == 'production') ? "[APP][INF] Production DB dgbu" : "[APP][INF] Testing DB dgbu-local"));
+
+
+// mongoose = require('mongoose');
+
+// var conn = mongoose.connect(urlDB, { useNewUrlParser: true });
+// var db = mongoose.connection;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
