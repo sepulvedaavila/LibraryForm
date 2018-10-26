@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 var express = require('express');
 var cors = require('cors');
 var xmlbuilder = require('xmlbuilder');
+//TODO: Check the way of building the tags with index `
 var fs = require('fs');
 var router = express.Router();
 
@@ -22,10 +23,10 @@ router.get('/getMovie', function (req, res) {
       return results.json();
     }).then(data => {   
 
-      console.log(data);
-            if(data.Error){
-              
+      console.log(data.Response);
+            if(data.Response === 'False'){              
                 console.log("No existe la pelicula en la OMDB");
+                res.sendStatus(300);
             }else{
                 var xml = xmlbuilder.create({
                     root: {
@@ -42,13 +43,16 @@ router.get('/getMovie', function (req, res) {
                 // así que hay que convertir el xml a un string para que sea procesado.
                 xml = xml.toString({pretty:true});
                 
-                fs.writeFile('public/xml/newdoc.xml', xml, function(err){
+                fs.writeFile('public/xml/'+data.Title+'.xml', xml, function(err){
                   if(err) console.log(err);
                   console.log("archivo guardado");
                   res.send(data);
                 });
               
               }
+    }).catch( (err) => {
+        console.log(err);
+        res.send("Error: no se ha podido conectar con la API");
     });
   });
 

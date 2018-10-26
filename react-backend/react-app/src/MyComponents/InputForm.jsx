@@ -1,5 +1,8 @@
 import React from 'react'
 import InputField from './InputField'
+import swal from 'sweetalert' 
+
+
 
 
 class InputForm extends React.Component{
@@ -26,20 +29,32 @@ class InputForm extends React.Component{
                 console.log(inputValues1[obj].split(' ').join('+'))
             }
         }
-
+        //TODO: Create the separation between the search and the actual XML saving 
+        //TODO: implement the logic of use MARC21 tags & index
         fetch('http://localhost:3001/getMovie?title='+titulo_pelicula)
         .then( results => {
             return results.json();
-        }).then(data => {
-            console.log(data)
-            if(data.Error){
-                //TODO: Cambiar alert por SWAL y pedir que ingrese manualmente
-                alert("No existe la pelicula en la OMDB");
-            }else{
+        }).then(data => {                   
+            
                 console.log("Busqueda exitosa en OMDB");
-            }
+                console.log(data);
+                swal({
+                    title: "Archivo Generado",
+                    text: "tu archivo ha sido guardado y esta en espera de ser cargado al sistema",
+                    icon: "success",
+                    button: "aceptar",
+                  });
+            
+        }).catch( (err) => {    
+            console.log(err);            
+            swal({
+                title: "Error",
+                text: "Ha ocurrido un error con tu busqueda",
+                icon: "error",
+                button: "aceptar",
+              });
         });
-        
+    
      
     }
     render(){
