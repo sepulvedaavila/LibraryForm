@@ -66,11 +66,12 @@ class InputForm extends React.Component{
                     fieldName={field.fieldName}
                     fieldPlaceholder={field.placeholder}
                     onChange={this.inputChange}
-                />
+                />      
+                         
         );
         return (<form id={this.props.formId}>
                     {form} 
-                    <input type='button' value='Create XML' onClick={this.sendData}/>
+                    <input className="input-three" type='button' value='Create XML' onClick={this.sendData}/>
                 </form>)
     }
 }

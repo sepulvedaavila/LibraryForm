@@ -13,10 +13,14 @@ class InputField extends React.Component{
     }
 
     render(){
-        let component = <div>
-                            <label>{this.props.fieldName}</label>
+        let component = <div className="row-labels-and-inputs">
+                            <div className="labels-marc">
+                                <label>{this.props.fieldName}</label>
+                            </div>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input className="short-inputs" name={this.props.name} type="text" placeholder="etiqueta"/>
+                            <input className="short-inputs" name={this.props.name} type="text" placeholder="índice"/>
                             <input name={this.props.name} type='text' 
                             placeholder={this.props.fieldPlaceholder}
                             onChange={this.handleChange}/>

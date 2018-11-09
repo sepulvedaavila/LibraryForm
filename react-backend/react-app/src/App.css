@@ -24,6 +24,24 @@
   font-size: large;
 }
 
+.short-inputs{
+  width: 4em;
+  margin: 0 2em 0 0;
+}
+
+.labels-marc{
+  width: 10em;
+  display: inline-block;
+}
+
+.row-labels-and-inputs{
+  padding: 0.1em;
+}
+
+#mainForm{
+  padding: 2em;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
