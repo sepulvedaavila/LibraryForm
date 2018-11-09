@@ -31,11 +31,6 @@ class InputField extends React.Component{
 
     render(){
 
-        let component = <div className="row-labels-and-inputs">
-                            <div className="labels-marc">
-                                <label>{this.props.fieldName}</label>
-                            </div>
-                        </div>
         let aux = '';
         if (this.props.name === 'nota_general1' || this.props.name === 'nota_premios1'){
             aux = <input type="button" value="Agregar campo adicional" onClick={this.addField}/>
