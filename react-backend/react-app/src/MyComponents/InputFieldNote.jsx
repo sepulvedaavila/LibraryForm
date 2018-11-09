@@ -14,16 +14,15 @@ class InputFieldNote extends React.Component{
 
     render(){
         let component = <div>
-                            <br/>
-                            <input name={this.props.name+"_tag"} type='text' 
-                            placeholder={'Tagname'}
-                                onChange={this.handleChange}/>
-                            <br/>
-                            <input name={this.props.name+"_name"} type='text'
-                                placeholder={'Index for the tag'}
+                            <div className="labels-marc"></div>                            
+                            <input hidden className="short-inputs" name={this.props.name+"_tag"} type='text' 
+                            placeholder={'etiqueta'}
+                                onChange={this.handleChange}/>                            
+                            <input className="short-inputs" name={this.props.name+"_name"} type='text'
+                                placeholder={'índice'}
                                 onChange={this.handleChange} />
-                            <br/>
-                            <input name={this.props.name} type='text'
+                            
+                            <input className="" name={this.props.name} type='text'
                                 placeholder={this.props.fieldPlaceholder}
                                 onChange={this.handleChange} />
                         </div>;
