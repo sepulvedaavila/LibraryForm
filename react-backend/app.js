@@ -5,10 +5,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var colors = require('colors');
-
-var indexRouter = require('./routes/index');
-var movieRouter = require('./routes/getMovie');
-var usersRouter = require('./routes/users');
+var mongoose = require('mongoose');
+var compression = require('compression');
 
 var app = express();
 
@@ -20,10 +18,10 @@ var urlDB = (process.env.NODE_ENV == 'production') ? "mongodb://127.0.0.1:27017/
 console.log(colors.cyan((process.env.NODE_ENV == 'production') ? "[APP][INF] Production DB dgbu" : "[APP][INF] Testing DB dgbu-local"));
 
 
-mongoose = require('mongoose');
-
 var conn = mongoose.connect(urlDB, { useNewUrlParser: true });
 var db = mongoose.connection;
+
+app.use(compression());  // Compresión de rutas
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,9 +33,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
+
+const indexRouter = require('./routes/index');
+const videograbacion = require ('./routes/videograbacion');
+
 app.use('/', indexRouter);
-app.use('/getMovie', movieRouter);
-app.use('/users', usersRouter);
+app.use('/videograbacion',videograbacion);
+
+
+// Finish Routes section
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
