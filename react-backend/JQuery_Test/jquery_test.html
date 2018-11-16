@@ -1050,6 +1050,24 @@
         </div>
     </div>
     <script type="text/javascript">
+        /*
+        Creo que nos estabamos trabando un buen con React, papi
+        Mejor calamos así con JotaCueritos y sacamos un MVP con un poco de estilo ChaFavs
+        Checa cómo podemos obtener todos los campos de texto con id
+        Creo que si las etiquetas e indices son estáticos también nos quitamos una chamba extra
+
+        TODO:
+        Checa los constraints de cada campo, creo que por eso están seccionados los de Nota General y 
+        Nota Premios y podemos nosotros seccionar desde el atrapado del contenido para que nos 
+        libremos del add Note y remove note
+
+        En todo caso ya quedó el add y remove de cada nota extra
+
+        También ya me adelanté a lo de los campos de texto, sólo queda seccionarlos
+
+
+        */
+
         $(document).ready(function(){
             $('#findFilm').click(function(){
                 $('#posterImg').hide();
@@ -1057,8 +1075,9 @@
                 $.get('http://www.omdbapi.com/', {t:titulo, apikey:'82a4df75'}, function(data){
                     console.log(data);
                     if(data.hasOwnProperty('Error')){
-                        alert(data.Error);
+                        swal(data.Error);
                     } else {
+                        $('#titulo').val(data.Title);
                         $('#nota_resumen').val(data.Plot);
                         $('#nota_premios1').val(data.Awards);
                         $('#nota_idioma').val(data.Language);
@@ -1076,7 +1095,7 @@
             });
             $("#createXML").click(function(){
                 var inputValues = [];
-                $('input').each(function(){
+                $('form input:text').each(function(){
                     inputValues.push($(this).val());
                 });
                 console.log(inputValues);
