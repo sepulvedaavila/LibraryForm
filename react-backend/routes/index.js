@@ -28,11 +28,12 @@ router.get('/getMovie', function (req, res) {
                 console.log("No existe la pelicula en la OMDB");
                 res.sendStatus(300);
             }else{
+                console.log(data)
                 var xml = xmlbuilder.create({
-                    root: {
-                        peliculas: {
-                            titulo: {
-                                '@type': 'Titulo', 
+                    record: {
+                        datafield: {
+                            subfield: {
+                                '@tag': '998', 
                                 '#text': data.Title 
                             }
                         }
