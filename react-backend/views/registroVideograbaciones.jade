@@ -3,197 +3,200 @@ extends layout
 block content
     div(id="root")
         div(class="App")
-            header(class="App-header")
-                h1(class="App-title") Catalogación de películas y videograbaciones
+                header(class="App-header")
+                    h1(class="App-title") Catalogación de películas y videograbaciones
 
-                div(style="max-width: 100px; margin-left:45%;")
-                    br
-                    img(src="" style="display:none;max-width: 100%;" alt="Poster" id="posterImg")
 
-                form(id="mainForm")
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Código idioma
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="codigo_idioma" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="codigo_idioma" type="text" placeholder="índice")
-                        input(name="codigo_idioma" type="text" placeholder="Type something")
+                div(class="row")
+                    div(class="col-md-8")
+                        form(id="mainForm")
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Código idioma
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="codigo_idioma" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="codigo_idioma" type="text" placeholder="índice")
+                                input(name="codigo_idioma" type="text" placeholder="Type something")
+                            
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    b
+                                    b
+                                    b
+                                    b
+                                    label Clasificación Dewey;
+                                input(class="short-inputs" name="clasificacion_dewey" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="clasificacion_dewey" type="text" placeholder="índice")
+                                input(name="clasificacion_dewey" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Autor personal
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="autor_personal" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="autor_personal" type="text" placeholder="índice")
+                                input(name="autor_personal" type="text" placeholder="Type something")
+            
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Titulo
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="titulo" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="titulo" type="text" placeholder="Indice")
+                                input(name="titulo" type="text" id="titulo" placeholder="Type something")
+                                input(type="button" id="findFilm" value="Buscar titulo")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Pie de imprenta
+                                    b
+                                    b
+                                    b
+                                    b 
+                                input(class="short-inputs" name="pie_imprenta" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="pie_imprenta" type="text" placeholder="índice")
+                                input(name="pie_imprenta" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Descripción física 
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="descr_fisica" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="descr_fisica" type="text" placeholder="índice")
+                                input(name="descr_fisica" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs" id="divNotaGeneral")
+                                div(class="labels-marc")
+                                    label Nota General 
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_general1" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_general1" type="text" placeholder="índice")
+                                input(name="nota_general1" type="text" placeholder="Type something")
+                                input(type="button" value="✚" id="addGeneral")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Nota creación 
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_creacion" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_creacion" type="text" placeholder="índice")
+                                input(name="nota_creacion" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Nota particular 
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_particular" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_particular" type="text" placeholder="índice")
+                                input(name="nota_particular" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Nota resumen 
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_resumen" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_resumen" type="text" placeholder="índice")
+                                input(name="nota_resumen" id="nota_resumen" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Nota audiencia 
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_audiencia" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_audiencia" type="text" placeholder="índice")
+                                input(name="nota_audiencia" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Sistema detalles
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="sistema_detalles" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="sistema_detalles" type="text" placeholder="índice")
+                                input(name="sistema_detalles" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Nota de Idioma
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_idioma" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_idioma" type="text" placeholder="índice")
+                                input(name="nota_idioma" id="nota_idioma" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs" id="divNotaPremios")
+                                div(class="labels-marc")
+                                    label Nota de premios&nbsp;
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="nota_premios1" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="nota_premios1" type="text" placeholder="índice")
+                                input(name="nota_premios1" id="nota_premios1" type="text" placeholder="Type something")
+                                input(type="button" value="✚" id="addPremios")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Material General
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="material_gral" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="material_gral" type="text" placeholder="índice")
+                                input(name="material_gral" type="text" placeholder="Type something")
+
+                            div(class="row-labels-and-inputs")
+                                div(class="labels-marc")
+                                    label Coautor personal
+                                    b
+                                    b
+                                    b
+                                    b
+                                input(class="short-inputs" name="coautor_pers" type="text" placeholder="etiqueta")
+                                input(class="short-inputs" name="coautor_pers" type="text" placeholder="índice")
+                                input(name="coautor_pers" type="text" placeholder="Type something")
+
+                            input(class="input-three" type="button" value="Create XML" id="createXML")
                     
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            b
-                            b
-                            b
-                            b
-                            label Clasificación Dewey;
-                        input(class="short-inputs" name="clasificacion_dewey" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="clasificacion_dewey" type="text" placeholder="índice")
-                        input(name="clasificacion_dewey" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Autor personal
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="autor_personal" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="autor_personal" type="text" placeholder="índice")
-                        input(name="autor_personal" type="text" placeholder="Type something")
-    
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Titulo
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="titulo" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="titulo" type="text" placeholder="Indice")
-                        input(name="titulo" type="text" id="titulo" placeholder="Type something")
-                        input(type="button" id="findFilm" value="Buscar titulo")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Pie de imprenta
-                            b
-                            b
-                            b
-                            b 
-                        input(class="short-inputs" name="pie_imprenta" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="pie_imprenta" type="text" placeholder="índice")
-                        input(name="pie_imprenta" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Descripción física 
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="descr_fisica" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="descr_fisica" type="text" placeholder="índice")
-                        input(name="descr_fisica" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs" id="divNotaGeneral")
-                        div(class="labels-marc")
-                            label Nota General 
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_general1" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_general1" type="text" placeholder="índice")
-                        input(name="nota_general1" type="text" placeholder="Type something")
-                        input(type="button" value="✚" id="addGeneral")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Nota creación 
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_creacion" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_creacion" type="text" placeholder="índice")
-                        input(name="nota_creacion" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Nota particular 
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_particular" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_particular" type="text" placeholder="índice")
-                        input(name="nota_particular" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Nota resumen 
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_resumen" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_resumen" type="text" placeholder="índice")
-                        input(name="nota_resumen" id="nota_resumen" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Nota audiencia 
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_audiencia" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_audiencia" type="text" placeholder="índice")
-                        input(name="nota_audiencia" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Sistema detalles
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="sistema_detalles" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="sistema_detalles" type="text" placeholder="índice")
-                        input(name="sistema_detalles" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Nota de Idioma
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_idioma" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_idioma" type="text" placeholder="índice")
-                        input(name="nota_idioma" id="nota_idioma" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs" id="divNotaPremios")
-                        div(class="labels-marc")
-                            label Nota de premios&nbsp;
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="nota_premios1" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="nota_premios1" type="text" placeholder="índice")
-                        input(name="nota_premios1" id="nota_premios1" type="text" placeholder="Type something")
-                        input(type="button" value="✚" id="addPremios")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Material General
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="material_gral" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="material_gral" type="text" placeholder="índice")
-                        input(name="material_gral" type="text" placeholder="Type something")
-
-                    div(class="row-labels-and-inputs")
-                        div(class="labels-marc")
-                            label Coautor personal
-                            b
-                            b
-                            b
-                            b
-                        input(class="short-inputs" name="coautor_pers" type="text" placeholder="etiqueta")
-                        input(class="short-inputs" name="coautor_pers" type="text" placeholder="índice")
-                        input(name="coautor_pers" type="text" placeholder="Type something")
-
-                    input(class="input-three" type="button" value="Create XML" id="createXML")
+                    div(class="col-md-4" style="max-width: 100px; margin-left:45%;")
+                        br
+                        img(src="" style="display:none;max-width: 100%;" alt="Poster" id="posterImg")
 
 
-    script(src="./scripts/videograbaciones.js")
+    script(src="/assets/scripts/videograbaciones.js")
 
   
 

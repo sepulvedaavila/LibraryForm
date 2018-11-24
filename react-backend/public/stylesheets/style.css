@@ -865,7 +865,7 @@ body {
 /*TODO: Create a better style regarding the input tags*/
 
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -879,6 +879,7 @@ body {
   height: 50px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
 .App-title {
@@ -905,6 +906,7 @@ body {
 
 #mainForm {
   padding: 2em;
+  display: inline-block;
 }
 
 @-webkit-keyframes App-logo-spin {

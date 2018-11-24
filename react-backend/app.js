@@ -31,7 +31,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// Setting path to serve static assets
+//app.use(express.static(path.join(__dirname, 'public')));
+// Setting node_modules to serve front-end static assets like Bootstrap
+app.use('/assets', [
+  express.static(__dirname + '/public/'),
+  express.static(__dirname + '/node_modules/')
+]);
 
 // Routes
 
@@ -42,7 +48,7 @@ app.use('/', indexRouter);
 app.use('/videograbacion',videograbacion);
 
 
-// Finish Routes section
+// Routes end
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,5 +65,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
