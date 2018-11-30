@@ -45,7 +45,7 @@ const indexRouter = require('./routes/index');
 const videograbacion = require ('./routes/videograbacion');
 
 app.use('/', indexRouter);
-app.use('/videograbacion',videograbacion);
+app.use('/videograbacion/',videograbacion);
 
 
 // Routes end

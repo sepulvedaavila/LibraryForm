@@ -8,7 +8,7 @@ var router = express.Router();
 router.use(cors());
 
 router.get('/', function (req, res) {
-    res.render('index', {title: 'DGBU Systems'});
+    res.render('videograbacion');
 });
 
 module.exports = router;
