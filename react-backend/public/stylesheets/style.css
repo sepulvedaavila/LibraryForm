@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
 a {
@@ -862,7 +862,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-/*TODO: Create a better style regarding the input tags*/
+
 
 .App {
 
@@ -883,30 +883,28 @@ body {
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .App-intro {
   font-size: large;
 }
 
-.short-inputs {
-  width: 4em;
-  margin: 0 2em 0 0;
-}
-
-.labels-marc {
-  width: 10em;
-  display: inline-block;
-}
-
-.row-labels-and-inputs {
-  padding: 0.1em;
-}
-
 #mainForm {
   padding: 2em;
   display: inline-block;
+}
+
+.main-background{
+  background-color:rgb(49, 82, 121);
+}
+
+.secondary-background{
+  background-color:rgba(0, 0, 0, .14);
+}
+
+span{
+  color: #efefef;
 }
 
 @-webkit-keyframes App-logo-spin {
