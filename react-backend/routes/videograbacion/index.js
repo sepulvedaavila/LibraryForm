@@ -15,12 +15,10 @@ router.get('/', function(req, res, next) {
 });
 
 /*  POST OMDB Service */
-/* Papaw en Express las funciones de router son con minúsculas */
 router.get('/getMovie', function (req, res) {
   res.render('registroVideograbaciones');
 });
 
-// Papaw los campos de los POST se acceden con req.query.CAMPO
 // console.log(req.query.title);
 // fetch('http://www.omdbapi.com/?t=' + req.query.title + '&apikey=82a4df75')
 //   .then(results => {

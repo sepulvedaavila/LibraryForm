@@ -12,6 +12,7 @@
                     $('#nota_resumen').val(data.Plot);
                     $('#nota_premios1').val(data.Awards);
                     $('#nota_idioma').val(data.Language);
+                    $('#nota_autor_personal').val(data.Director);
                     $("#posterImg").attr('src', data.Poster);
                     $('#posterImg').show();
                 }
