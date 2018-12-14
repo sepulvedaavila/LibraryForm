@@ -7,7 +7,7 @@ var router = express.Router();
 
 router.use(cors());
 
-var baseRoute="/videograbaciones"
+var baseRoute="/videograbaciones";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
