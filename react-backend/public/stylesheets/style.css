@@ -899,6 +899,9 @@ body {
   background-color:rgb(49, 82, 121);
 }
 
+.main-wrapper {
+  overflow: hidden;
+}
 .secondary-background{
   background-color:rgba(0, 0, 0, .14);
 }

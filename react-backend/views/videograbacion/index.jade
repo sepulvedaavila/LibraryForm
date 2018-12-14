@@ -3,19 +3,32 @@ extends ../layout
 block content
     div(id="root")
         div(class="App")
-                nav(class="navbar navbar-expand-lg navbar-light bg-light")
-                    a(class="navbar-brand pb-3 pt-3" href="#") 
-                        img(src="/assets/img/logo_uaq.png" height="70" width="55")
-                    h6(class="col-md-2" style="color:black") Catalogación de películas y videograbaciones
+                nav(class="navbar navbar-expand-lg navbar-light bg-light ")
+                    a(class="navbar-brand pb-1 pt-1" href="#") 
+                        img(src="/assets/img/logo_uaq.png" height="70" width="55")                        
+                    h6(class="col-md-5" style="color:black") Catalogación de películas y videograbaciones
+
+                    div(class="collapse navbar-collapse" id="navbarNav")
+                        ul(class="navbar-nav")
+                            li(class="nav-item active")
+                                a(class="nav-link" href="#") Inicio 
+                                    span(class="sr-only") (current)
+                            li(class="nav-item")
+                                a(class="nav-link" href="#") Registro de Videograbaciones
+                                    span(class="sr-only") 
+                            li(class="nav-item")
+                                a(class="nav-link" href="#") Registro bibliografico
+                                    span(class="sr-only") 
 
 
                 div(class="row")
-                    div(class="col-md-3 main-background")
+                    div(class="col-md-3 main-background pt-3")
                         br
                         div(class="secondary-background ml-3" style="width:20em; height:27em;")
-                            img(src="" style="display:none;max-width: 100%;" alt="Poster" id="posterImg")
+                            //- img(src="" style="display:none;max-width: 100%;" alt="Poster" id="posterImg")
+                            img(src="http://placehold.jp/300x445.png" id="posterImg")
 
-                    div(class="col-md-9 main-background")
+                    div(class="col-md-9 main-background pt-3 ")
                         form(id="mainForm" class="input-group")
                             div(class="row-labels-and-inputs")
                                 div(class="row")                                                                        
