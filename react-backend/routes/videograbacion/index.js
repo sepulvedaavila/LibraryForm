@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Videograbaciones' });
 });
 
+router.post('/',function(req, res){
+  console.log(req.body);
+});
+
 /*  POST OMDB Service */
 router.get('/getMovie', function (req, res) {
   res.render('registroVideograbaciones');

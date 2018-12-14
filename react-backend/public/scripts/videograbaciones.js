@@ -58,12 +58,27 @@
             });
             $("#createXML").click(function(){
                 var inputValues = [];
-                $('form input:text').each(function(){
+
+                var form = $('form input:text').each(function(){
                     inputValues.push($(this).val());
                 });
-                console.log(inputValues);
+                form.promise().done(function(){
+                    console.log(inputValues);   
+                    $.ajax({
+                        type: "POST",
+                        url: 'videograbacion/',
+                        data: {inputValues:inputValues},
+                        success: function(){swal({type:success,title:"XML",text:"Tu archivo XML se ha generado"})},
+                        dataType: 'text'
+                    });
+                });
+                
             });
         });
         $(document).on("click", ".remove", function () {
             $(this).parent().remove();
         });
+
+
+
+
