@@ -3,21 +3,24 @@ extends ../layout
 block content
     div(id="root")
         div(class="App")
-                nav(class="navbar navbar-expand-lg navbar-light bg-light ")
+                nav(class="navbar navbar-expand-lg navbar-light bg-light")
                     a(class="navbar-brand pb-1 pt-1" href="#") 
                         img(src="/assets/img/logo_uaq.png" height="70" width="55")                        
                     h6(class="col-md-5" style="color:black") Catalogación de películas y videograbaciones
 
                     div(class="collapse navbar-collapse" id="navbarNav")
-                        ul(class="navbar-nav")
-                            li(class="nav-item active")
-                                a(class="nav-link" href="#") Inicio 
-                                    span(class="sr-only") (current)
+                        ul(class="navbar-nav ml-auto")        
                             li(class="nav-item")
-                                a(class="nav-link" href="#") Registro de Videograbaciones
+                                a(class="nav-link" href="#") Registro Videograbaciones
                                     span(class="sr-only") 
                             li(class="nav-item")
-                                a(class="nav-link" href="#") Registro bibliografico
+                                a(class="nav-link" href="#") Consulta Videograbaciones
+                                    span(class="sr-only") 
+                            li(class="nav-item")
+                                a(class="nav-link" href="#") Registro Bibliografico
+                                    span(class="sr-only") 
+                            li(class="nav-item")
+                                a(class="nav-link" href="#") Consulta Bibliografica
                                     span(class="sr-only") 
 
 
@@ -73,7 +76,7 @@ block content
                                         input(class="form-control col-md-1 mr-2" name="titulo" type="text" placeholder="Indice")
                                         input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
                                         input(class="form-control col-md-6" name="titulo" type="text" id="titulo" placeholder="Type something")
-                                        button(class="fa fa-check" type="button" id="findFilm")
+                                        button(class="btn btn-light fa fa-check" type="button" id="findFilm")
 
                             div(class="row-labels-and-inputs")
                                 div(class="row")
@@ -107,7 +110,7 @@ block content
                                         input(class="form-control col-md-1 mr-2" name="nota_general1" type="text" placeholder="índice")
                                         input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
                                         textarea(class="form-control col-md-6" name="nota_general1" type="text" placeholder="Type something")
-                                        button(class="fa fa-plus" type="button" id="addGeneral")
+                                        button(class="btn btn-light fa fa-plus" type="button" id="addGeneral")
 
                             div(class="row-labels-and-inputs")
                                 div(class="row")
@@ -185,7 +188,7 @@ block content
                                         input(class="form-control col-md-1 mr-2" name="nota_premios1" type="text" placeholder="índice")
                                         input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
                                         textarea(class="form-control col-md-6" name="nota_premios1" id="nota_premios1" type="text" placeholder="Type something")
-                                        button(class="fa fa-plus" type="button" id="addPremios")
+                                        button(class="btn btn-ligt fa fa-plus" type="button" id="addPremios")
 
                             div(class="row-labels-and-inputs")
                                 div(class="row")
@@ -209,7 +212,7 @@ block content
                                         input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
                                         input(class="form-control col-md-6" name="coautor_pers" type="text" placeholder="Type something")
 
-                            input(class="input-three" type="button" value="Create XML" id="createXML")
+                            input(class="btn btn-light input-three" type="button" value="Create XML" id="createXML")
                     
 
 
