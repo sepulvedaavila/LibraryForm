@@ -67,8 +67,15 @@
                     $.ajax({
                         type: "POST",
                         url: 'videograbacion/',
+                        success: function(){
+                            console.log("success");
+                            swal(
+                                "XML",
+                                "Se ha generado tu archivo de forma correcta",
+                                'success'
+                            );
+                        },                        
                         data: {inputValues:inputValues},
-                        success: function(){swal({type:success,title:"XML",text:"Tu archivo XML se ha generado"})},
                         dataType: 'text'
                     });
                 });
