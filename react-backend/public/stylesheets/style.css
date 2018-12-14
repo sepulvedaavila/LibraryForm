@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 }
 
+label {
+  color: #fff;
+}
+
 .swal-icon--error {
   border-color: #f27474;
   -webkit-animation: animateErrorIcon .5s;
