@@ -1,5 +1,22 @@
 
     $(document).ready(function(){
+        $('#titulo').keypress(function(){
+            var titulo = $('#titulo').val();
+            $.get('http://www.omdbapi.com/', { s: titulo, apikey: '82a4df75' }, function (data) {
+                if (!data.hasOwnProperty('Error')) {
+                    var availableTags = [];
+                    data = data['Search'];
+                    data.forEach(element => {
+                        availableTags.push(element.Title);
+                        //availableTags.push(element.Title+" ("+element.Year+")");
+                    });
+                    //console.log(availableTags);
+                    $("#titulo").autocomplete({
+                        source: availableTags
+                    });
+                }
+            });    
+        });
         $('#findFilm').click(function(){
             $('#posterImg').hide();
             var titulo = $('#titulo').val();
@@ -20,9 +37,9 @@
                     $("#posterImg").attr('src', data.Poster);
                     $('#posterImg').show();
                 }
+            });
         });
-    });
-//TODO: create database and save
+        //TODO: create database and save
             $("#addGeneral").click(function(){
                 $("#divNotaGeneral")
                 .append('<div="row-labels-and-inputs">'+

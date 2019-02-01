@@ -24,6 +24,10 @@ label {
   animation: animateXMark .5s
 }
 
+.ui-autocomplete-input{
+  background-color: white;
+}
+
 .swal-icon--error__line {
   position: absolute;
   height: 5px;
