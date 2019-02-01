@@ -6,6 +6,7 @@
             $.get('http://www.omdbapi.com/', {t:titulo, apikey:'82a4df75'}, function(data){
                 console.log(data);
                 if(data.hasOwnProperty('Error')){
+                    $('input').val('');
                     swal({type: 'error',
                         title: 'Error en API',
                         text: 'La pélicula que estas buscando no se encuentra en la API, verifica el titulo'
@@ -21,7 +22,7 @@
                 }
         });
     });
-
+//TODO: create database and save
             $("#addGeneral").click(function(){
                 $("#divNotaGeneral")
                 .append('<div="row-labels-and-inputs">'+
@@ -39,7 +40,7 @@
                             '</div>'+
                         '<br/></div>');
             });
-            $("#addPremios").click(function () {
+            $("#addPremios").click(function(){
                 $("#divNotaPremios")
                 .append('<div="row-labels-and-inputs">'+
                             '<div class="row">'+
