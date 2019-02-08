@@ -16,10 +16,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req, res){
-  console.log('hello');
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, files) {
-    
+
     var xml = xmlbuilder.create({
                         record: {
                             datafield: {
@@ -30,7 +29,7 @@ router.post('/',function(req, res){
                             }
                         }
                     });
-    console.log(xml);
+    // console.log(xml);
     xml = xml.toString({pretty:true});
     fs.writeFile('public/xml/'+fields.titulo+'.xml', xml, function(err){
       if(err) console.log(err);
@@ -39,6 +38,11 @@ router.post('/',function(req, res){
     });
   });
 });
+
+router.post('/save',function(req, res){
+  console.log(req.body);
+  res.sendStatus(200);
+})
 
 /*  POST OMDB Service */
 router.get('/getMovie', function (req, res) {

@@ -104,12 +104,7 @@
                         processData: false,
                         data: dataForm,
                         success: () => {
-                            console.log("success");
-                            swal(
-                                "XML",
-                                "Se ha generado tu archivo de forma correcta",
-                                'success'
-                            );
+                            console.log("success");                            
                         },
                         error: () => {
                             console.log("error");
@@ -118,23 +113,31 @@
                                 "Lo sentimos ocurrio un error",
                                 'error'
                             );
-                        },
-                        done: () => {
-                            $.ajax({
-                                type: "POST",
-                                url: 'videograbacion/save',
-                                contentType: false,
-                                processData: false,
-                                data: objectoRespuesta,
-                                success: () => {
-                                    console.log("Objeto guardado");
-                                },
-                                error: ()=>{
-                                    console.log("error");
-                                }
-                            })
-                        }               
+                        }                                                               
+                    }).done(() => {
+                        $.ajax({                            
+                            type: "POST",
+                            url: 'videograbacion/save',
+                            contentType: false,
+                            processData: false,
+                            data: objectoRespuesta,
+                            success: () => {
+                                console.log(objectoRespuesta);
+                                swal(
+                                    "XML",
+                                    "Se ha generado tu archivo de forma correcta",
+                                    'success'
+                                );
+                            },
+                            error: ()=>{
+                                console.log("error");
+                            }
+                        });
                     });
+
+                 
+
+                    
                 
                 
             });
