@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 router.post('/',function(req, res){
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, files) {
-
+  // TODO: create the structure of the XML 
     var xml = xmlbuilder.create({
                         record: {
                             datafield: {
