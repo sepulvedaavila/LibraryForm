@@ -13,23 +13,19 @@ var schema = new mongoose.Schema({
     Actors: String,
     Plot: String,
     Language: String,
-  Country: String,
-  Awards: String,
-  Poster:String,
-  Ratings:[
-      String
-  ],
-  Metascore: String,
-  imdbRating: String,
-  imdbVotes: String,
-  imdbID: String,
-  Type: String,
-  DVD: String,
-  BoxOffice: String,
-  Production: String,
-  Website: String,
-  Response: String 
-
+    Country: String,
+    Awards: String,
+    Poster:String,
+    Metascore: String,
+    imdbRating: String,
+    imdbVotes: String,
+    imdbID: String,
+    Type: String,
+    DVD: String,
+    BoxOffice: String,
+    Production: String,
+    Website: String,
+    Response: String 
 },{
     timestamps: true
 });
