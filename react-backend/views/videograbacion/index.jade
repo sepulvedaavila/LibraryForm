@@ -39,8 +39,8 @@ block content
                                             span(class="") Código de idioma    
 
                                         label(class="col-md-1 mr-2" name="codigo_idioma" type="text") 041
-                                        input(class="form-control col-md-1 mr-2" name="codigo_idioma" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")                                  
+                                        label(class="col-md-1 mr-2" name="indice" type="text" ) *
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a                                  
                                         input(class="form-control col-md-6" name="codigo_idioma" type="text" placeholder="Escriba algo")
                                         
                             
@@ -50,8 +50,8 @@ block content
                                         div(class="input-group-prepend col-md-2")
                                             span(class="" id="") Clasificación Dewey
                                         label(class="col-md-1 mr-2" name="clasificacion_dewey" type="text") 082
-                                        input(class="form-control col-md-1 mr-2" name="clasificacion_dewey" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="indice" type="text") 04
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         input(class="form-control col-md-6" name="clasificacion_dewey" type="text" placeholder="791.[DDC]")
 
                             div(class="row-labels-and-inputs")
@@ -61,8 +61,8 @@ block content
                                             span(class="" id="") Autor personal
                                     
                                         label(class="col-md-1 mr-2" name="autor_personal" type="text") 100
-                                        input(class="form-control col-md-1 mr-2" name="autor_personal" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="autor_personal") 1^
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         input(class="form-control col-md-6" name="autor_personal" type="text" id="nota_autor_personal" placeholder="Escriba algo")
             
                             div(class="row-labels-and-inputs")
@@ -72,8 +72,8 @@ block content
                                             span(class="" id="") Titulo
                                     
                                         label(class="col-md-1 mr-2" name="titulo" type="text") 245
-                                        input(class="form-control col-md-1 mr-2" name="titulo" type="text" placeholder="Indice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="indice" type="text") *
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") h
                                         input(class="form-control col-md-6" name="titulo" type="text" id="titulo" placeholder="Escriba algo")
                                         button(class="btn btn-light fa fa-check" type="button" id="findFilm")
 
@@ -84,8 +84,8 @@ block content
                                             span(class="" id="") Pie de imprenta
                                      
                                         label(class="col-md-1 mr-2" name="pie_imprenta" type="text") 260
-                                        input(class="form-control col-md-1 mr-2" name="pie_imprenta" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="pie_imprenta" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         input(class="form-control col-md-6" name="pie_imprenta" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -95,8 +95,8 @@ block content
                                             span(class="" id="") Descripción física 
                                     
                                         label(class="col-md-1 mr-2" name="descr_fisica" type="text") 300
-                                        input(class="form-control col-md-1 mr-2" name="descr_fisica" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="descr_fisica" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") c
                                         textarea(class="form-control col-md-6" name="descr_fisica" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs" id="divNotaGeneral")
@@ -106,8 +106,8 @@ block content
                                             span(class="" id="") Nota General 
                                     
                                         label(class="col-md-1 mr-2" name="nota_general1" type="text") 490/500 
-                                        input(class="form-control col-md-1 mr-2" name="nota_general1" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_general1" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         textarea(class="form-control col-md-6" name="nota_general1" type="text" placeholder="Escriba algo")
                                         button(class="btn btn-light fa fa-plus" type="button" id="addGeneral")
 
@@ -118,8 +118,8 @@ block content
                                             span(class="" id="") Nota creación 
                                     
                                         label(class="col-md-1 mr-2" name="nota_creacion" type="text") 508
-                                        input(class="form-control col-md-1 mr-2" name="nota_creacion" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_creacion" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         textarea(class="form-control col-md-6" name="nota_creacion" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -129,8 +129,8 @@ block content
                                             span(class="" id="") Nota particular 
                                     
                                         label(class="col-md-1 mr-2" name="nota_particular" type="text") 511
-                                        input(class="form-control col-md-1 mr-2" name="nota_particular" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_particular" type="text") 1^
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         textarea(class="form-control col-md-6" name="nota_particular" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -140,8 +140,8 @@ block content
                                             span(class="" id="") Nota resumen 
                                     
                                         label(class="col-md-1 mr-2" name="nota_resumen" type="text") 520
-                                        input(class="form-control col-md-1 mr-2" name="nota_resumen" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_resumen" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text" placeholder="sub") a
                                         textarea(class="form-control col-md-6" name="nota_resumen" id="nota_resumen" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -151,8 +151,8 @@ block content
                                             span(class="" id="") Nota audiencia 
                                     
                                         label(class="col-md-1 mr-2" name="nota_audiencia" type="text") 521
-                                        input(class="form-control col-md-1 mr-2" name="nota_audiencia" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_audiencia" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         textarea(class="form-control col-md-6" name="nota_audiencia" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -162,8 +162,8 @@ block content
                                             span(class="" id="") Sistema detalles
                                     
                                         label(class="col-md-1 mr-2" name="sistema_detalles" type="text") 538
-                                        input(class="form-control col-md-1 mr-2" name="sistema_detalles" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="sistema_detalles" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text" ) a
                                         textarea(class="form-control col-md-6" name="sistema_detalles" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -173,8 +173,8 @@ block content
                                             span(class="" id="") Nota de Idioma
                                     
                                         label(class="col-md-1 mr-2" name="nota_idioma" type="text") 546
-                                        input(class="form-control col-md-1 mr-2" name="nota_idioma" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_idioma" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text" ) a
                                         textarea(class="form-control col-md-6" name="nota_idioma" id="nota_idioma" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs" id="divNotaPremios")
@@ -184,8 +184,8 @@ block content
                                             span(class="" id="") Nota de premios
                                     
                                         label(class="col-md-1 mr-2" name="nota_premios1" type="text") 586
-                                        input(class="form-control col-md-1 mr-2" name="nota_premios1" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="nota_premios1" type="text")
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         textarea(class="form-control col-md-6" name="nota_premios1" id="nota_premios1" type="text" placeholder="Escriba algo")
                                         button(class="btn btn-ligt fa fa-plus" type="button" id="addPremios")
 
@@ -196,8 +196,8 @@ block content
                                             span(class="" id="") Material General
                                     
                                         label(class="col-md-1 mr-2" name="material_gral" type="text") 650
-                                        input(class="form-control col-md-1 mr-2" name="material_gral" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="material_gral" type="text") 
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         textarea(class="form-control col-md-6" name="material_gral" type="text" placeholder="Escriba algo")
 
                             div(class="row-labels-and-inputs")
@@ -207,8 +207,8 @@ block content
                                             span(class="" id="") Coautor personal
                                     
                                         label(class="col-md-1 mr-2" name="coautor_pers" type="text") 700
-                                        input(class="form-control col-md-1 mr-2" name="coautor_pers" type="text" placeholder="índice")
-                                        input(class="form-control col-md-1 mr-2" name="subindice" type="text" placeholder="sub")
+                                        label(class="col-md-1 mr-2" name="coautor_pers" type="text") 1^
+                                        label(class="col-md-1 mr-2" name="subindice" type="text") a
                                         input(class="form-control col-md-6" name="coautor_pers" type="text" placeholder="Escriba algo")
                             div(class="row")
                                 div(class="col-md-2 offset-md-10")                             
