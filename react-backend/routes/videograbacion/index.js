@@ -3,7 +3,7 @@ var express = require('express');
 var cors = require('cors');
 var xmlbuilder = require('xmlbuilder');
 var fs = require('fs');
-var modelPeliculas = require('../models/peliculas');
+var modelPeliculas = require('../../models/peliculas');
 var formidable = require('formidable');
 var router = express.Router();
 
