@@ -117,9 +117,7 @@
                     }).done(() => {
                         $.ajax({                            
                             type: "POST",
-                            url: 'videograbacion/save',
-                            contentType: false,
-                            processData: false,
+                            url: 'videograbacion/save',                            
                             data: objectoRespuesta,
                             success: () => {
                                 console.log(objectoRespuesta);

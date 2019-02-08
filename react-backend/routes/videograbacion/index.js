@@ -3,6 +3,7 @@ var express = require('express');
 var cors = require('cors');
 var xmlbuilder = require('xmlbuilder');
 var fs = require('fs');
+var modelPeliculas = require('../models/peliculas');
 var formidable = require('formidable');
 var router = express.Router();
 
@@ -34,7 +35,7 @@ router.post('/',function(req, res){
     fs.writeFile('public/xml/'+fields.titulo+'.xml', xml, function(err){
       if(err) console.log(err);
       res.sendStatus(200);
-      console.log("archivo guardado");        
+      console.log("archivo guardado");
     });
   });
 });

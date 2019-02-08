@@ -1,5 +1,3 @@
-node_modules
 *.xml
 .DS_store
-react-backend/package.json
-react-backend/package-lock.json
+/react-backend/node_modules
