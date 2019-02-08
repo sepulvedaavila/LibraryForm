@@ -17,11 +17,12 @@
                 }
             });    
         });
+        var objectoRespuesta = {};
         $('#findFilm').click(function(){
             $('#posterImg').hide();
             var titulo = $('#titulo').val();
             $.get('http://www.omdbapi.com/', {t:titulo, apikey:'82a4df75'}, function(data){
-                console.log(data);
+                console.log(data);                
                 if(data.hasOwnProperty('Error')){
                     $('input').val('');
                     swal({type: 'error',
@@ -29,6 +30,7 @@
                         text: 'La pélicula que estas buscando no se encuentra en la API, verifica el titulo'
                     });
                 } else {
+                    objectoRespuesta = data;
                     $('#titulo').val(data.Title);
                     $('#nota_resumen').val(data.Plot);
                     $('#nota_premios1').val(data.Awards);
@@ -39,7 +41,6 @@
                 }
             });
         });
-        //TODO: create database and save
             $("#addGeneral").click(function(){
                 $("#divNotaGeneral")
                 .append('<div="row-labels-and-inputs">'+
@@ -75,28 +76,66 @@
                         '<br/></div>');
             });
             $("#createXML").click(function(){
-                var inputValues = [];
+                // var inputValues = [];
+                var dataForm = new FormData();
+                
+                dataForm.append('titulo',$('#titulo').val());
+                dataForm.append('notw_resumen',$('#nota_resumen').val());
+                dataForm.append('nota_premios1',$('#nota_premios1').val());
+                dataForm.append('nota_idioma',$('#nota_idioma').val());
+                dataForm.append('nota_autor_personal',$('#nota_autor_personal').val());
+                dataForm.append('posterImg',$("#posterImg").attr('src'));
+                
+                for(elem in objectoRespuesta){
+                    console.log(elem+' : '+objectoRespuesta[elem])
+                }
+                // var form = $('form input:text').each(function(){
+                //     inputValues.push($(this).val());
+                // });
+                
+                for (var pair of dataForm.entries()) {
+                    console.log(pair[0]+ ', ' + pair[1]); 
+                }
 
-                var form = $('form input:text').each(function(){
-                    inputValues.push($(this).val());
-                });
-                form.promise().done(function(){
-                    console.log(inputValues);   
                     $.ajax({
                         type: "POST",
                         url: 'videograbacion/',
-                        success: function(){
+                        contentType: false,
+                        processData: false,
+                        data: dataForm,
+                        success: () => {
                             console.log("success");
                             swal(
                                 "XML",
                                 "Se ha generado tu archivo de forma correcta",
                                 'success'
                             );
-                        },                        
-                        data: {inputValues:inputValues},
-                        dataType: 'text'
+                        },
+                        error: () => {
+                            console.log("error");
+                            swal(
+                                "Ups",
+                                "Lo sentimos ocurrio un error",
+                                'error'
+                            );
+                        },
+                        done: () => {
+                            $.ajax({
+                                type: "POST",
+                                url: 'videograbacion/save',
+                                contentType: false,
+                                processData: false,
+                                data: objectoRespuesta,
+                                success: () => {
+                                    console.log("Objeto guardado");
+                                },
+                                error: ()=>{
+                                    console.log("error");
+                                }
+                            })
+                        }               
                     });
-                });
+                
                 
             });
         });
