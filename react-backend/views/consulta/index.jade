@@ -22,24 +22,18 @@ block content
                             li(class="nav-item")
                                 a(class="nav-link" href="#") Consulta Bibliografica
                                     span(class="sr-only")                             
-                div(class='container')
-                    div(class="col-md-9 main-background pt-3 ")
+                div(class='fluid-container')
+                    div(class="col-md-12 main-background pt-3 ")
                         form(id="mainForm" class="input-group")
                             div(class="row-labels-and-inputs")
                                     div(class="row")
                                         div(class="input-group input-group-sm mb-3")
                                             div(class="input-group-prepend col-md-2")
-                                                span(class="" id="") Titulo
+                                            //-     span(class="" id="") Titulo
                                         
                                             label(class="col-md-1 mr-2" name="titulo" type="text")
-                                            input(class="form-control col-md-6" name="titulo" type="text" id="titulo" placeholder="Escriba algo")
-                                            button(class="btn btn-light fa fa-search" type="button" id="findFilm")
-                
-
-
-              
+                                            input(class="form-control col-md-6" name="titulo" type="text" id="titulo" placeholder="Busqueda por titulo")
+                                            button(class="btn btn-light fa fa-search" type="button" id="findFilm")                
+                              
+            
     script(src="/assets/scripts/consulta.js")
-
-  
-
-
