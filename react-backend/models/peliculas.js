@@ -30,4 +30,4 @@ var schema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('peliculas', schema);
+module.exports = mongoose.model('pelicula', schema);
