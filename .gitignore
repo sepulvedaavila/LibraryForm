@@ -1,3 +1,4 @@
 *.xml
 .DS_store
 /react-backend/node_modules
+/react-backend/public/xml/*.xml

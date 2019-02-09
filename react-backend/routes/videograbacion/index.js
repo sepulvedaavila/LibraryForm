@@ -21,17 +21,14 @@ router.post('/',function(req, res){
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, files) {
   // TODO: create the structure of the XML 
-    var xml = xmlbuilder.create({
-                        record: {
-                            datafield: {
-                                subfield: {
-                                    '@tag': '998', 
-                                    '#text': fields.titulo  
-                                }
-                            }
-                        }
-                    });
-    // console.log(xml);
+    var xml = xmlbuilder.create('root')
+    .ele('?xml',{version:'1.0'},{encoding:'utf-8'})
+    .att('xmlns', 'http://www.w3.org/2005/Atom')
+    .ele('record')
+      .ele('title',{type: 'text'}).up()
+    .up()
+                       
+    console.log(xml);
     xml = xml.toString({pretty:true});
     fs.writeFile('public/xml/'+fields.titulo+'.xml', xml, function(err){
       if(err) console.log(err);
@@ -45,7 +42,7 @@ router.post('/save',function(req, res){
   modelPeliculas.find({},(err,data)=>{
     if(err) console.log(err)
     else{
-      console.log(data);
+
       var movie = new modelPeliculas({
         _id: new mongoose.Types.ObjectId,
         Title: req.body.Title,
@@ -77,9 +74,7 @@ router.post('/save',function(req, res){
       movie.save((err, data)=>{
         if(err){
           console.log(err);
-          console.log(data);
-        }else{
-          console.log(data);
+        }else{          
           res.sendStatus(200);
         }
       });
