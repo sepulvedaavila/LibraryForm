@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+
 var express = require('express');
 var cors = require('cors');
 var xmlbuilder = require('xmlbuilder');
