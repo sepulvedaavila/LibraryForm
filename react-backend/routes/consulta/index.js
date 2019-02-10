@@ -16,15 +16,9 @@ router.get('/search:title', function (req, res) {
     var title = req.params.title;
     modelPeliculas.find({Title:new RegExp(title,'i')},function(err,data){
         if(err){ 
-            //console.log(err);
             console.log('Si hay ERRNO');
         } else {
-            console.log('No hay ERRNO');
-            var titles = data.map(elem=>{
-                return elem.Title;
-            });
-            console.log(titles);
-            res.status(200).send( { data: titles });
+            res.status(200).send( { data: data });
         }
     });
 });
