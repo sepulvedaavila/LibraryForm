@@ -126,6 +126,7 @@
                                     "Se ha generado tu archivo de forma correcta",
                                     'success'
                                 );
+                                $(':input[type="text"]').val('');
                             },
                             error: ()=>{
                                 console.log("error");
