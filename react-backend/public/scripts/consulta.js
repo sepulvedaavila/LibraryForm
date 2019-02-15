@@ -21,7 +21,7 @@ $(document).ready(function(){
         }, {
             "title": "Details",
             "data": null,
-            "defaultContent": "<button><i class='fa-eye'></button>"
+            "defaultContent": "<button><i class='fa fa-eye'></button>"
 
         }]
     });
