@@ -12,9 +12,8 @@ router.use(cors());
 var baseRoute = "/consulta";
 
 
-router.get('/search:title', function (req, res) {
-    var title = req.params.title;
-    modelPeliculas.find({Title:new RegExp(title,'i')},function(err,data){
+router.get('/search', function (req, res) {
+    modelPeliculas.find({},function(err,data){
         if(err){ 
             console.log('Si hay ERRNO');
         } else {

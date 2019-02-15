@@ -1,13 +1,23 @@
 $(document).ready(function(){
-    $('#findFilm').click(function(){
-        let titulo = $('#titulo').val();
-        $.get('consulta/search'+titulo, function(res){
-            var result = res.data;
-            var titles = result.map(function(elem){
-                var returnValue = {id:elem._id, title:elem.Title, year:elem.Year};
-                return returnValue;
-            });
-            console.log(titles);
-        });
+    $('#tablaConsulta').DataTable({
+        "processing": true,
+        "ajax": {
+            url: "consulta/search",
+            "type": "GET",
+            dataSrc: function (json) {
+                var obj = json.data;
+                return obj;
+            }
+        },
+        "columns": [{
+            "title":"Title",
+            "data": "Title"
+        }, {
+            "title": "Year",
+            "data": "Year"
+        }, {
+            "title": "Prefill",
+            "data": "Year"
+        }]
     });
 });
