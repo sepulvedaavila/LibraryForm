@@ -30,7 +30,7 @@
                         text: 'La pélicula que estas buscando no se encuentra en la API, verifica el titulo'
                     });
                 } else {
-                    objectoRespuesta = data;
+                    objectoRespuesta = data;                
                     $('#titulo').val(data.Title);
                     $('#nota_resumen').val(data.Plot);
                     $('#nota_premios1').val(data.Awards);
