@@ -16,8 +16,13 @@ $(document).ready(function(){
             "title": "Year",
             "data": "Year"
         }, {
-            "title": "Prefill",
-            "data": "Year"
+            "title": "Director",
+            "data": "Director"
+        }, {
+            "title": "Details",
+            "data": null,
+            "defaultContent": "<button><i class='fa-eye'></button>"
+
         }]
     });
 });
