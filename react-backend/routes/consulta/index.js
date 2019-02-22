@@ -1,9 +1,5 @@
-const fetch = require('node-fetch');
 var express = require('express');
 var cors = require('cors');
-var xmlbuilder = require('xmlbuilder');
-var fs = require('fs');
-var mongoose = require('mongoose');
 var modelPeliculas = require('../../models/peliculas');
 var router = express.Router();
 
@@ -37,16 +33,10 @@ router.post('/pelicula:id',function(req, res){
 
 router.get('/pelicula/:id',function(req, res){
     var id = req.params.id;
-    console.log(id);
+    console.log("RUTA PELIS");
     modelPeliculas.findOne({_id:id}, function(err, obj){
-        if(err){
-            console.log(err);
-        }else{
-            console.log(obj);
-            res.render('/pelicula',{
-                obj: obj
-            });
-        }
+        if(err) console.log(err);
+        res.render(baseRoute+'/pelicula');
     });
 });
 

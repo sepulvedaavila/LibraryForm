@@ -36,9 +36,9 @@ $(document).ready(function(){
                     icon:'success',
                     title: "good",
                     text: JSON.stringify(pelicula.pelicula.Title)}
-                    ).then(
-                        window.location.href = "consulta/pelicula/"+id+""
-                    );
+                    ).then(function(){
+                        window.location.href = "/consulta/pelicula/"+id;
+                    });
             },
             error: () => {
                 swal({
