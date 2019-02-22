@@ -22,6 +22,35 @@ router.get('/search', function (req, res) {
     });
 });
 
+router.post('/pelicula:id',function(req, res){
+    var id = req.params.id;
+    console.log(id);
+    modelPeliculas.findOne({_id:id}, function(err, obj){
+        if(err){
+            console.log(err);
+        }else{
+            console.log(obj);
+            res.status(200).send({pelicula: obj});
+        }
+    });
+});
+
+router.get('/pelicula/:id',function(req, res){
+    var id = req.params.id;
+    console.log(id);
+    modelPeliculas.findOne({_id:id}, function(err, obj){
+        if(err){
+            console.log(err);
+        }else{
+            console.log(obj);
+            res.render('/pelicula',{
+                obj: obj
+            });
+        }
+    });
+});
+
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', { title: 'Consulta Videograbaciones' });
