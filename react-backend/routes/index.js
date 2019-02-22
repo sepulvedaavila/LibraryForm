@@ -11,8 +11,4 @@ router.get('/', function (req, res) {
     res.render('videograbacion');
 });
 
-router.get('/consulta', function (req, res) {
-    res.render('consulta');
-});
-
 module.exports = router;

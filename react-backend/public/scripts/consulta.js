@@ -30,14 +30,14 @@ $(document).ready(function(){
         var id = $(this).attr('id');
         $.ajax({
             method:"POST",
-            url: "consulta/pelicula"+id,        
+            url: "pelicula/"+id,        
             success: (pelicula) => {
                 swal({
                     icon:'success',
                     title: "good",
                     text: JSON.stringify(pelicula.pelicula.Title)}
                     ).then(function(){
-                        window.location.href = "/consulta/pelicula/"+id;
+                        window.location.href = "pelicula/"+id;
                     });
             },
             error: () => {

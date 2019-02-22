@@ -44,10 +44,12 @@ app.use('/assets', [
 const indexRouter = require('./routes/index');
 const videograbacion = require ('./routes/videograbacion');
 const consulta = require ('./routes/consulta/');
+const pelicula = require('./routes/pelicula/');
 
 app.use('/', indexRouter);
 app.use('/videograbacion/',videograbacion);
 app.use('/consulta',consulta);
+app.use('/pelicula',pelicula);
 
 
 // Routes end

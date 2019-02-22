@@ -43,7 +43,7 @@ router.get('/pelicula/:id',function(req, res){
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Consulta Videograbaciones' });
+    res.render('consulta');
 });
 
 router.post('/', function (req, res) {
