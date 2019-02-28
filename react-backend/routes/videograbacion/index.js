@@ -38,6 +38,10 @@ router.post('/',function(req, res){
   });
 });
 
+router.get('/creacionFormulario', function(req, res){
+  console.log(req.body);
+});
+
 router.post('/save',function(req, res){
   modelPeliculas.find({},(err,data)=>{
     if(err) console.log(err)
