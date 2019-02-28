@@ -21,7 +21,7 @@ $(document).ready(function(){
             language:language, country:country
         };
         let objStr = JSON.stringify(obj);
-        $.get('/creacionFormulario', {registro:objStr});
+        $.post('/videograbacion/creacionFormulario/',obj);
         
     });
 });

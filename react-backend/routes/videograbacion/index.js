@@ -10,41 +10,15 @@ var router = express.Router();
 
 router.use(cors());
 
-var baseRoute="/videograbaciones";
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Videograbaciones' });
-});
-
-router.post('/',function(req, res){
-  var form = new formidable.IncomingForm();
-  form.parse(req, function (err, fields, files) {
-  // TODO: create the structure of the XML 
-    var xml = xmlbuilder.create('root')
-    .ele('?xml',{version:'1.0'},{encoding:'utf-8'})
-    .att('xmlns', 'http://www.w3.org/2005/Atom')
-    .ele('record')
-      .ele('title',{type: 'text'}).up()
-    .up()
-                       
-    console.log(xml);
-    xml = xml.toString({pretty:true});
-    fs.writeFile('public/xml/'+fields.titulo+'.xml', xml, function(err){
-      if(err) console.log(err);
-      res.sendStatus(200);
-      console.log("archivo guardado");
-    });
-  });
-});
-
-router.get('/creacionFormulario', function(req, res){
-  console.log(req.body);
+router.post('/creacionFormulario', function(req, res){
+  console.log(req.body.title);
+  let data = req.body;
+  res.send(data);
 });
 
 router.post('/save',function(req, res){
   modelPeliculas.find({},(err,data)=>{
-    if(err) console.log(err)
+    if(err) console.log(err);
     else{
 
       var movie = new modelPeliculas({
@@ -91,5 +65,30 @@ router.get('/getMovie', function (req, res) {
   res.render('registroVideograbaciones');
 });
         
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Videograbaciones' });
+});
+
+router.post('/',function(req, res){
+  var form = new formidable.IncomingForm();
+  form.parse(req, function (err, fields, files) {
+  // TODO: create the structure of the XML 
+    var xml = xmlbuilder.create('root')
+    .ele('?xml',{version:'1.0'},{encoding:'utf-8'})
+    .att('xmlns', 'http://www.w3.org/2005/Atom')
+    .ele('record')
+      .ele('title',{type: 'text'}).up()
+    .up()
+                       
+    console.log(xml);
+    xml = xml.toString({pretty:true});
+    fs.writeFile('public/xml/'+fields.titulo+'.xml', xml, function(err){
+      if(err) console.log(err);
+      res.sendStatus(200);
+      console.log("archivo guardado");
+    });
+  });
+});
 
 module.exports = router;
