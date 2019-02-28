@@ -26,15 +26,18 @@ block content
 
   - var Obj = !{obj}
   div(class="container-fluid " style="height:100%;")
+    br
+    br
     div(class="row")
       div(class="col-md-12")
-        div(class="col-md-9 pt-3 ")
+        div(class="col-md-12 pt-3 ")
           form(id="movieForm" class="input-group")
             div(class="row-labels-and-inputs")
               div(class="row")  
-                div(class="col-md-5")
+                div(class="col-md-3 mr-3")
                   img(src="#{obj.Poster}", alt="") 
-                div(class="col-md-7")   
+                div(class="col-md-8 pr-3" style="padding: 2em 3em; background-color:rgba(51, 51, 51, .5);")  
+                  br 
                   p(for="") Titulo: #{obj.Title}
                   p(for="") Año: #{obj.Year}
                   p(for="") Clasificación: #{obj.Rated}
@@ -46,4 +49,6 @@ block content
                   p(for="") Actores: #{obj.Actors}
                   p(for="") Sinopsis: #{obj.Plot}
                   p(for="") Lenguaje: #{obj.Language}
-                  p(for="") País: #{obj.Country}          
+                  p(for="") País: #{obj.Country}      
+                  div(class="offset-md-8 col-md-1")    
+                    button(class="btn btn-primary") Crear nuevo elemento
